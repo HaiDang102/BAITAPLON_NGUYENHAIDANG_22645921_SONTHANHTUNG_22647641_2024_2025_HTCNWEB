@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduce</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid max_width">
+        <header id="header">
+            <a href="home.html" class="logo">
+                <img src="../img/home/logo.png" alt="Logo" />
+            </a>
+            <nav class="navbar" id="nav-bar">
+                <ul>
+                    <li><a href="../html/home.html">Trang hủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../html/listproduct.html" data-toggle="dropdown">
+                            Sản Phẩm
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../html/listproduct.html">Tất Cả</a>
+                            <a class="dropdown-item" href="../html/nhomviet.html">Viết </a>
+                            <a class="dropdown-item" href="../html/nhomtapvo.html">Tập - Vở</a>
+                            <a class="dropdown-item" href="../html/nhomsanphamkhac.html">Sản Phẩm Khác</a>
+                        </div>
+                    </li>
+                    <li><a href="../html/introduce.html">Giới Thiệu</a></li>
+                    <li><a href="../html/sitemap.html">Site Map</a></li>
+                    <li><a href="../html/register.html">Đăng Ký Tài Khoản</a></li>
+                </ul>
+            </nav>
+            <div class="responsive" id="responsive">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="icon">
+                <button type="button" onclick="Search()">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <button type="button" data-toggle="modal" data-target="#myModal">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </button>
+                <a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            </div>
+            <div class="form-search" id="form-search">
+                <input type="text" id="txt-search" placeholder="Tìm kiếm..." />
+                <button type="button" id="search-btn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Đăng nhập</h3>
+                            <button type="button" class="close" data-dismiss="modal">
+                                &times;
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form">
+                                <div class="form-group text-center col-12">
+                                    <input class="form-control col-10 d-inline-block" type="email" name="email" id="emailDN" placeholder="Email" />
+                                    <div class="icon d-inline-block pl-2">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center col-12">
+                                    <input class="form-control col-10 d-inline-block" type="password" name="pass" id="passwordDN" placeholder="Mật khẩu" />
+                                    <div class="icon d-inline-block pl-2">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group d-flex justify-content-around">
+                                    <label for="" class="form-check-label">
+                                        <input class="form-check d-inline" type="checkbox" name="rememberMe"
+                                            id="rememberMe" />
+                                        Lưu mật khẩu
+                                    </label>
+                                    <label for="">
+                                        <a href="#">Quên mật khẩu</a>
+                                    </label>
+                                </div>
+                                <div class="form-group text-center col-12">
+                                    <button type="submit" class="btn btn-success" onclick="DangNhap()">
+                                        Đăng nhập
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <style>
+            .head_background {
+                background-image: url(../img/home/profile.jpg);
+            }
+            
+            .card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                /* Thêm hiệu ứng chuyển tiếp */
+            }
+            
+            .card:hover {
+                transform: translateY(-10px);
+                /* Nổi lên 10px */
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                /* Tạo bóng cho card */
+            }
+            
+            .card-body {
+                background-image: url(../img/footer/nencard.jpg);
+            }
+            
+            .card-body p,
+            h5 {
+                color: white;
+            }
+        </style>
+        <div class="head_background  mb-5" style="justify-content: center;">
+            <!-- <img src="../img/home/nengioithieu1.jpg" alt="" style="width: 100%; height: 200px" /> -->
+            <div class="box col-12 " style="text-align: center;">
+                <div class="title " style="color: aliceblue; font-size: 50px;">CHÀO MỪNG ĐẾN VỚI CHÚNG TÔI</div>
+            </div>
+            <div class="inner-content row" style="justify-content: center;">
+                <div class="card mt-3 mb-5" style="width: 22rem; text-align: center; margin-right: 20px;">
+                    <img class="card-img-top" src="../img/footer/profile1.jpg" alt="Card image cap" style="border-radius: 10px; height: 500px; width: 300;">
+                    <div class="card-body">
+                        <h5 class="card-title">Nguyễn Hải Đăng</h5>
+                        <p class="card-text">Lớp: DHHTTT18A</p>
+                        <p class="card-text">MSSV: 22645921</p>
+                    </div>
+                </div>
+                <div class="card mt-3 mb-5 " style=" border-radius: 10px; width: 22rem; text-align: center;">
+                    <img class="card-img-top" src="../img/footer/profile2.jpg" alt="Card image cap" style="border-radius: 10px; height: 500px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sơn Thanh Tùng</h5>
+                        <p class="card-text">Lớp: DHHTTT18A</p>
+                        <p class="card-text">MSSV: 22647641</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-center font-weight-bold" style="font-size: 40px; color: black; background-color: #AEADAD;">
+            Đôi nét về website
+        </h3>
+        <div style="display: flex; align-items: center">
+            <img src="../img/home/camon1.jpg" alt="" width="40%" height="40%" style="margin-right: 20px; border-radius: 25px" />
+            <div>
+                <p style="font-size: 21px; text-align: justify">
+                    Xin chào! Chúng tôi là Nguyễn Hải Đăng và Sơn Thanh Tùng – sinh viên năm hai tại Trường Đại Học Công Nghiệp Thành phố Hồ Chí Minh. Rất vui khi được chào đón bạn đến với trang web bán văn phòng phẩm của chúng tôi!
+                </p>
+                <p style="font-size: 21px; text-align: justify">
+                    Chúng tôi tự hào mang đến một điểm đến tin cậy, nơi bạn có thể tìm thấy mọi sản phẩm văn phòng phẩm cần thiết. Với chất lượng sản phẩm cao cấp và dịch vụ tận tâm, chúng tôi cam kết mang lại trải nghiệm mua sắm tuyệt vời cho bạn.</p>
+                <p style="font-size: 21px; text-align: justify">
+                    Tại trang web của chúng tôi, bạn sẽ tìm thấy đa dạng các sản phẩm từ những thương hiệu uy tín. Từ bút, vở, tài liệu, bìa hồ sơ đến thước kẻ và băng keo – mọi thứ đều được chọn lọc kỹ lưỡng để đáp ứng nhu cầu của bạn.
+                </p>
+                <p style="font-size: 21px; text-align: justify">
+                    Chúng tôi cũng rất chú trọng đến nhu cầu của sinh viên và nhân viên văn phòng. Với một loạt sản phẩm văn phòng phẩm đa dạng và giá cả phải chăng, tôi mong muốn đem lại sự tiện lợi và hỗ trợ tốt nhất cho bạn. Dù bạn là sinh viên đang tìm kiếm các vật dụng
+                    học tập cần thiết hoặc nhân viên văn phòng cần mua sắm cho văn phòng của mình, tôi cam kết cung cấp cho bạn những giải pháp phù hợp và sản phẩm chất lượng.
+                </p>
+                <p style="font-size: 21px; text-align: justify">
+                    Bên cạnh việc cung cấp các sản phẩm chất lượng, tôi cũng cam kết đảm bảo dịch vụ sau bán hàng tốt nhất. Hãy yên tâm khi mua sắm tại trang web của tôi, bạn sẽ nhận được sự chăm sóc và hỗ trợ tận tình từ đội ngũ chuyên nghiệp. Hãy liên hệ với chúng tôi
+                    nếu bạn cần thêm thông tin hoặc hỗ trợ. Chúng tôi luôn sẵn lòng hỗ trợ bạn mọi lúc, mọi nơi.
+                </p>
+                <p style="font-size: 21px; text-align: justify">
+                    Hãy để tôi đồng hành cùng bạn, mang lại mọi điều một cách nhanh chóng và thuận tiện nhất. Hãy khám phá ngay hôm nay và cảm nhận sự khác biệt!
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center" id="btnmua">
+            <button class="btn btn-primary" onclick="location.href='listproduct.html'" style="background-color: red; padding: 10px; width: 110px">
+                Mua ngay
+            </button>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <h3>Liên hệ với tôi qua</h3>
+                        <ul>
+                            <li><i class="fa fa-envelope"></i> nhdang04122004@gmail.com</li>
+                            <li><i class="fa fa-phone"></i> 0965769943</li>
+                            <li><i class="fa fa-map-marker"></i> Gò Vấp TP. Hồ Chí Minh</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Theo dõi tôi trên</h3>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100052010229856&mibextid=ZbWKwL"><i
+                                        class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/saediteris_hd?igsh=MW9ieWgzMm5zejFxag=="><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                        <div class="inner-box3">
+                            <div class="inner-title">
+                                <h3>Thanh Toán </h3>
+                            </div>
+                            <div class="inner-pay">
+                                <a href="#"><img src="../img/footer/pay1.jpg" alt=""></a>
+                                <a href="#"><img src="../img/footer/pay2.jpg" alt=""></a>
+                                <a href="#"><img src="../img/footer/pay3.jpg" alt=""></a>
+                                <a href="#"><img src="../img/footer/pay4.jpg" alt=""></a>
+                                <a href="#"><img src="../img/footer/pay5.jpg" alt=""></a>
+                                <a href="#"><img src="../img/footer/pay6.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/script.js"></script>
+    <script>
+        showSlide(0);
+    </script>
+</body>
+
+</html>

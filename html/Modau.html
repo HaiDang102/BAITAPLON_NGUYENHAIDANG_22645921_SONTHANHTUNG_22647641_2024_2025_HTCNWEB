@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduct</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #333;
+        }
+        
+        .container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            /* Allows images to wrap if the screen is small */
+            justify-content: center;
+            /* Centers images horizontally */
+        }
+        
+        .img-box {
+            background-size: cover;
+            background-position: center;
+            width: 300px;
+            height: 200px;
+            position: relative;
+            transition: transform 400ms ease, filter 400ms ease;
+            filter: grayscale(100%) opacity(35%);
+            border-radius: 10px;
+            /* Rounded corners */
+            overflow: hidden;
+            /* Ensures the image doesn't overflow the border */
+        }
+        
+        .img-box:hover {
+            transform: scale(1.05);
+            filter: grayscale(0%) opacity(100%);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btnXemTatCa {
+            padding: 10px 20px;
+            background-color: #3c4752;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 16px;
+            margin-top: 10px;
+            display: inline-block;
+            /* Center the button */
+        }
+        
+        .btnXemTatCa:hover {
+            background-color: #f3e99d;
+            transform: translateY(-3px);
+        }
+        
+        .col-md-4 {
+            margin-top: 20px;
+        }
+        
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            margin: 5px 0;
+            color: #555;
+        }
+        
+        .social-btn {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            background-color: #007bff;
+            /* Primary color for buttons */
+            border-radius: 50%;
+            /* Circular buttons */
+            display: inline-block;
+            position: relative;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .social-btn:hover {
+            background-color: #0056b3;
+            /* Darker color on hover */
+            transform: scale(1.1);
+            /* Slightly enlarge on hover */
+        }
+        /* Social media icons */
+        
+        .messenger::before {
+            content: '\f39e';
+            /* Font Awesome Messenger icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .facebook::before {
+            content: '\f09a';
+            /* Font Awesome Facebook icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .pinterest::before {
+            content: '\f0d2';
+            /* Font Awesome Pinterest icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .tiktok::before {
+            content: '\f3d7';
+            /* Font Awesome TikTok icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* Căn chỉnh và bố cục */
+        
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .rhG6k7 {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* Định dạng nút chia sẻ */
+        
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            background-size: cover;
+            margin-right: 8px;
+            border-radius: 50%;
+            /* Góc bo tròn hoàn toàn */
+            transition: background-color 0.3s ease;
+            /* Hiệu ứng chuyển màu mượt mà */
+        }
+        /* Hiệu ứng khi nhấn */
+        
+        .social-btn:hover {
+            opacity: 0.8;
+            /* Giảm độ trong suốt khi hover */
+        }
+        /* Dùng biểu tượng từ URL */
+        
+        .messenger {
+            background-image: url('https://img.icons8.com/color/48/facebook-messenger--v1.png');
+        }
+        
+        .facebook {
+            background-image: url('https://img.icons8.com/color/48/facebook-new.png');
+        }
+        
+        .pinterest {
+            background-image: url('https://img.icons8.com/color/48/pinterest--v1.png');
+        }
+        
+        .tiktok {
+            background-image: url('https://img.icons8.com/color/48/tiktok--v1.png');
+            /* URL biểu tượng TikTok */
+        }
+        /* Màu sắc cho nút khi hover */
+        
+        .messenger:hover {
+            background-color: #0078ff;
+            /* Màu cho Messenger */
+        }
+        
+        .facebook:hover {
+            background-color: #4267B2;
+            /* Màu cho Facebook */
+        }
+        
+        .pinterest:hover {
+            background-color: #E60023;
+            /* Màu cho Pinterest */
+        }
+        
+        .tiktok:hover {
+            background-color: #69C9D0;
+            /* Màu cho TikTok */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WEBSITE GIỚI THIỆU, BÁN VĂN PHÒNG PHẨM TRỰC TUYẾN</h1>
+    <div class="container">
+        <div class="img-box" style="background-image: url('../img/home/logo.png');"></div>
+        <div class="img-box" style="background-image: url('../img/home/logo.png');"></div>
+        <div class="img-box" style="background-image: url('../img/home/logo.png');"></div>
+        <div class="img-box" style="background-image: url('../img/home/logo.png');"></div>
+
+    </div>
+    <footer>
+        <a href="../html/home.html" class="btnXemTatCa">Bắt Đầu</a>
+        <div class="col-md-4">
+            <h3>Liên hệ với tôi qua</h3>
+            <ul>
+                <li><i class="fa fa-envelope"></i> nhdang04122004@gmail.com</li>
+                <li><i class="fa fa-phone"></i> 0965769943</li>
+                <li><i class="fa fa-map-marker"></i> Gò Vấp TP. Hồ Chí Minh</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>Theo dõi tôi trên</h3>
+            <div class="flex items-center idmlsn">
+                <a href="https://www.instagram.com/saediteris_hd?igsh=MW9ieWgzMm5zejFxag==" target="_blank">
+                    <button class="social-btn messenger" aria-label="Chia sẻ qua Messenger"></button>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100052010229856&mibextid=ZbWKwL" target="_blank">
+                    <button class="social-btn facebook" aria-label="Chia sẻ qua Facebook"></button>
+                </a>
+                <a href="https://www.pinterest.com/" target="_blank">
+                    <button class="social-btn pinterest" aria-label="Chia sẻ qua Pinterest"></button>
+                </a>
+                <a href="https://www.tiktok.com/@haian_04?_t=8qwiFmuWyzH&_r=1" target="_blank">
+                    <button class="social-btn tiktok" aria-label="Chia sẻ qua TikTok"></button>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
